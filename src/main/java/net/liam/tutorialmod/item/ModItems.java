@@ -16,7 +16,7 @@ public class ModItems {
     public static final Item STEEL_NUGGET = registerItem("steel_nugget", new Item(new Item.Settings()));
     public static final Item STEEL_POWDER = registerItem("steel_powder", new Item(new Item.Settings()));
 
-    public static final Item MAGNET = registerItem("magnet", new MagnetItem(new Item.Settings()));
+    public static final Item MAGNET = registerItem("magnet", new MagnetItem(new Item.Settings().maxDamage(0)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(TutorialMod.MOD_ID, name), item);

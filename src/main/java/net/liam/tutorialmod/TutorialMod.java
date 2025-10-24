@@ -3,6 +3,7 @@ package net.liam.tutorialmod;
 import net.fabricmc.api.ModInitializer;
 
 import net.liam.tutorialmod.block.ModBlocks;
+import net.liam.tutorialmod.component.ModDataComponentTypes;
 import net.liam.tutorialmod.item.ModItemGroups;
 import net.liam.tutorialmod.item.ModItems;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
@@ -19,5 +20,6 @@ public class TutorialMod implements ModInitializer{
 
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+        ModDataComponentTypes.registerDataComponentTypes();
 	}
 }

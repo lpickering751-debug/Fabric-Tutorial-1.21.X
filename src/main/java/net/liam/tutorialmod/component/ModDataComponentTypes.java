@@ -1,5 +1,6 @@
 package net.liam.tutorialmod.component;
 
+import com.mojang.serialization.Codec;
 import net.liam.tutorialmod.TutorialMod;
 import net.minecraft.component.ComponentType;
 import net.minecraft.registry.Registries;
@@ -10,8 +11,9 @@ import net.minecraft.util.math.BlockPos;
 import java.util.function.UnaryOperator;
 
 public class ModDataComponentTypes {
-    public static final ComponentType<BlockPos> COORDINATES =
-            register("coordinates", builder -> builder.codec(BlockPos.CODEC));
+
+    public static final ComponentType<Boolean> ACTIVE =
+            register("active", builder -> builder.codec(Codec.BOOL));
 
 
     private static <T>ComponentType<T> register(String name, UnaryOperator<ComponentType.Builder<T>> builderOperator) {
