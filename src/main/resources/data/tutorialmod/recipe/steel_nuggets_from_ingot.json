@@ -1,0 +1,14 @@
+{
+  "type": "crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tutorialmod:steel_ingot"
+
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "tutorialmod:steel_nugget"
+  }
+}

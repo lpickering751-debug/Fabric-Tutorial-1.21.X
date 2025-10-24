@@ -1,0 +1,16 @@
+{
+   "item.tutorialmod.steel_ingot": "Steel Ingot",
+   "item.tutorialmod.raw_steel": "Raw Steel",
+   "item.tutorialmod.steel_nugget": "Steel Nugget",
+   "item.tutorialmod.steel_powder": "Steel Powder",
+
+   "item.tutorialmod.magnet": "Magnet",
+
+  "block.tutorialmod.steel_block": "Block of Steel",
+  "block.tutorialmod.raw_steel_block": "Block of Raw Steel",
+  "block.tutorialmod.steel_ore": "Steel Ore",
+  "block.tutorialmod.deepslate_steel_ore": "Deepslate Steel Ore",
+
+  "itemgroup.tutorialmod.steel_ingredients": "Steel Ingredients",
+  "itemgroup.tutorialmod.steel_blocks": "Steel Blocks"
+}
