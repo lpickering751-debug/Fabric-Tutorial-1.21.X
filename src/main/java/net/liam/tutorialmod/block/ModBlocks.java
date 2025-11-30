@@ -2,6 +2,7 @@ package net.liam.tutorialmod.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.liam.tutorialmod.TutorialMod;
+import net.liam.tutorialmod.block.custom.ElytraLauncherBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.ExperienceDroppingBlock;
@@ -31,6 +32,9 @@ public class ModBlocks {
                     AbstractBlock.Settings.create().strength(4.5F, 3.0F)
                     .requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
 
+    public static final Block ELYTRA_LAUNCHER = registerBlock("elytra_launcher",
+            new ElytraLauncherBlock(AbstractBlock.Settings.create().strength(3.0f)));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(TutorialMod.MOD_ID, name), block);
@@ -47,6 +51,10 @@ public class ModBlocks {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.addAfter(Items.NETHERITE_BLOCK, ModBlocks.STEEL_BLOCK);
                 });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
+            entries.addAfter(Items.END_CRYSTAL, ModBlocks.ELYTRA_LAUNCHER);
+        });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.addAfter(Items.DEEPSLATE_DIAMOND_ORE, ModBlocks.STEEL_ORE);

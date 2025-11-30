@@ -3,14 +3,22 @@
    "item.tutorialmod.raw_steel": "Raw Steel",
    "item.tutorialmod.steel_nugget": "Steel Nugget",
    "item.tutorialmod.steel_powder": "Steel Powder",
+  "item.tutorialmod.ash": "Ash",
 
-   "item.tutorialmod.magnet": "Magnet",
+  "item.tutorialmod.protein_bar": "Protein Bar",
+
+   "item.tutorialmod.iron_magnet": "Iron Magnet",
 
   "block.tutorialmod.steel_block": "Block of Steel",
   "block.tutorialmod.raw_steel_block": "Block of Raw Steel",
   "block.tutorialmod.steel_ore": "Steel Ore",
   "block.tutorialmod.deepslate_steel_ore": "Deepslate Steel Ore",
 
+  "block.tutorialmod.elytra_launcher": "Elytra Launcher",
+
   "itemgroup.tutorialmod.steel_ingredients": "Steel Ingredients",
-  "itemgroup.tutorialmod.steel_blocks": "Steel Blocks"
+  "itemgroup.tutorialmod.steel_blocks": "Steel Blocks",
+  "itemgroup.tutorialmod.misc": "Misc",
+
+  "tooltip.tutorialmod.magnet_item.tooltip": "Literally just a magnet."
 }

@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": {
+      "item": "tutorialmod:steel_nugget"
+    },
+    "g": {
+      "item": "minecraft:golden_carrot"
+    },
+    "w": {
+      "item": "minecraft:wheat"
+    },
+    "S": {
+      "item": "minecraft:wheat_seeds"
+    },
+    "P": {
+      "item": "minecraft:pumpkin_seeds"
+    },
+    "M": {
+      "item": "minecraft:melon_seeds"
+    },
+    "B": {
+      "item": "minecraft:beef"
+    },
+    "L": {
+      "item": "minecraft:mutton"
+    }
+  },
+  "pattern": [
+    "SgP",
+    "wMw",
+    "BsL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tutorialmod:protein_bar"
+  }
+}

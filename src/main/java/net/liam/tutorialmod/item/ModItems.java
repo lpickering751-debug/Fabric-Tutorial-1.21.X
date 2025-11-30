@@ -15,8 +15,11 @@ public class ModItems {
     public static final Item RAW_STEEL = registerItem("raw_steel", new Item(new Item.Settings()));
     public static final Item STEEL_NUGGET = registerItem("steel_nugget", new Item(new Item.Settings()));
     public static final Item STEEL_POWDER = registerItem("steel_powder", new Item(new Item.Settings()));
+    public static final Item ASH = registerItem("ash", new Item(new Item.Settings()));
 
-    public static final Item MAGNET = registerItem("magnet", new MagnetItem(new Item.Settings().maxDamage(0)));
+    public static final Item IRON_MAGNET = registerItem("iron_magnet", new MagnetItem(new Item.Settings().maxDamage(128)));
+
+    public static final Item PROTEIN_BAR = registerItem("protein_bar", new Item(new Item.Settings().food(ModFoodComponents.PROTEIN_BAR)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(TutorialMod.MOD_ID, name), item);
@@ -30,10 +33,15 @@ public class ModItems {
             entries.addAfter(Items.RAW_IRON, RAW_STEEL);
             entries.addAfter(Items.IRON_NUGGET, STEEL_NUGGET);
             entries.addAfter(Items.GUNPOWDER, STEEL_POWDER);
+            entries.addAfter(ModItems.STEEL_POWDER, ModItems.ASH);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
-            entries.addAfter(Items.NETHERITE_PICKAXE, MAGNET);
+            entries.addAfter(Items.SPYGLASS, IRON_MAGNET);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
+            entries.addAfter(Items.GOLDEN_CARROT,ModItems.PROTEIN_BAR);
         });
     }
 }

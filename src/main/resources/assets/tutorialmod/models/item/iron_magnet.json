@@ -1,14 +1,14 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tutorialmod:item/magnet"
+    "layer0": "tutorialmod:item/iron_magnet"
   },
   "overrides": [
     {
       "predicate": {
         "tutorialmod:active": 1
       },
-      "model": "tutorialmod:item/magnet_push"
+      "model": "tutorialmod:item/iron_magnet_pull"
     }
   ]
 }

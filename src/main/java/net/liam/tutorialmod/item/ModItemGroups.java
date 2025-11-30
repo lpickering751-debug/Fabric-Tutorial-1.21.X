@@ -5,6 +5,7 @@ import net.liam.tutorialmod.TutorialMod;
 import net.liam.tutorialmod.block.ModBlocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -33,6 +34,17 @@ public class ModItemGroups {
                         entries.add(ModBlocks.STEEL_ORE);
                         entries.add(ModBlocks.DEEPSLATE_STEEL_ORE);
 
+                    }).build());
+
+    public static final ItemGroup MISC_MOD_GROUP = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(TutorialMod.MOD_ID, "misc"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(Items.NAME_TAG))
+                    .displayName(Text.translatable("itemgroup.tutorialmod.misc"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(ModItems.IRON_MAGNET);
+                        entries.add(ModBlocks.ELYTRA_LAUNCHER);
+                        entries.add(ModItems.PROTEIN_BAR);
+                        entries.add(ModItems.ASH);
                     }).build());
 
     public static void registerItemGroups() {

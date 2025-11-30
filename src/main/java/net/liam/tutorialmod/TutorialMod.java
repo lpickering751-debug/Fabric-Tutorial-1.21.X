@@ -2,11 +2,11 @@ package net.liam.tutorialmod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.liam.tutorialmod.block.ModBlocks;
 import net.liam.tutorialmod.component.ModDataComponentTypes;
 import net.liam.tutorialmod.item.ModItemGroups;
 import net.liam.tutorialmod.item.ModItems;
-import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,5 +21,6 @@ public class TutorialMod implements ModInitializer{
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
         ModDataComponentTypes.registerDataComponentTypes();
+        ModFuels.registerModFuels();
 	}
 }

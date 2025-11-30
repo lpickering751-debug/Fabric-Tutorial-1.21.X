@@ -2,14 +2,20 @@ package net.liam.tutorialmod.item.custom;
 
 import net.liam.tutorialmod.component.ModDataComponentTypes;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import net.minecraft.util.math.Box;
 import java.util.List;
@@ -31,8 +37,27 @@ public class MagnetItem extends Item {
             } else {
                 stack.set(ModDataComponentTypes.ACTIVE, true);
             }
+            world.playSound( null,
+                    player.getBlockPos(),
+                    SoundEvents.BLOCK_ANVIL_LAND,
+                    SoundCategory.PLAYERS,
+                    1.0f,
+                    1.0f);
 
-        } else {
+        } else if (!world.isClient) {
+            if (player.getMainHandStack() == stack) {
+                stack.damage(1, ((ServerWorld) world), ((ServerPlayerEntity) player), item -> player.sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
+            } else if (player.getOffHandStack() == stack) {
+                stack.damage(1, ((ServerWorld) world), ((ServerPlayerEntity) player), item -> player.sendEquipmentBreakStatus(item, EquipmentSlot.OFFHAND));
+            }
+
+            world.playSound( null,
+                    player.getBlockPos(),
+                    SoundEvents.BLOCK_METAL_STEP,
+                    SoundCategory.PLAYERS,
+                    1.0f,
+                    1.0f);
+
             double radius = 20.0;
             Box box = new Box(
                     player.getX() - radius, player.getY() - radius, player.getZ() - radius,
@@ -68,8 +93,9 @@ public class MagnetItem extends Item {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-
         if (target.isMobOrPlayer()) {
+
+            stack.damage(1, attacker, EquipmentSlot.MAINHAND);
 
             Boolean active = stack.get(ModDataComponentTypes.ACTIVE);
 
@@ -82,9 +108,9 @@ public class MagnetItem extends Item {
             } else {
                 dx = attacker.getX() - target.getX();
                 dz = attacker.getZ() - target.getZ();
-                strength = 1.0;
+                strength = 1.25;
                 if (attacker.isSprinting()) {
-                    strength = 2.0;
+                    strength = 1.75;
                 }
             }
 
@@ -110,5 +136,11 @@ public class MagnetItem extends Item {
         }
 
         return super.postHit(stack, target, attacker);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("tooltip.tutorialmod.magnet_item.tooltip"));
+        super.appendTooltip(stack, context, tooltip, type);
     }
 }

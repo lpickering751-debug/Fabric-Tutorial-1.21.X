@@ -8,10 +8,8 @@ import net.minecraft.util.Identifier;
 
 public class ModModelPredicates {
     public static void registerModelPredicates() {
-        ModelPredicateProviderRegistry.register(ModItems.MAGNET, Identifier.of(TutorialMod.MOD_ID, "active"),
+        ModelPredicateProviderRegistry.register(ModItems.IRON_MAGNET, Identifier.of(TutorialMod.MOD_ID, "active"),
                 (stack, world, entity, seed) ->
                         stack.get(ModDataComponentTypes.ACTIVE) != null && Boolean.TRUE.equals(stack.get(ModDataComponentTypes.ACTIVE)) ? 1f : 0f);
-
-
     }
 }
