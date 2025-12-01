@@ -1,8 +1,6 @@
 package net.liam.tutorialmod;
 
 import net.fabricmc.api.ModInitializer;
-
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.liam.tutorialmod.block.ModBlocks;
 import net.liam.tutorialmod.component.ModDataComponentTypes;
 import net.liam.tutorialmod.item.ModItemGroups;
@@ -16,11 +14,12 @@ public class TutorialMod implements ModInitializer{
 
     @Override
 	public void onInitialize() {
-        ModItemGroups.registerItemGroups();
 
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+        ModItemGroups.registerItemGroups();
         ModDataComponentTypes.registerDataComponentTypes();
         ModFuels.registerModFuels();
+
 	}
 }

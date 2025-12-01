@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "tutorialmod:iron_magnet"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "S": {
+      "item": "tutorialmod:steel_ingot"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "RMR",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tutorialmod:elytra_launcher"
+  }
+}

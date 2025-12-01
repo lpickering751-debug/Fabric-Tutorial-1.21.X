@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "group": "steel_block",
+  "ingredient": {
+    "item": "tutorialmod:raw_steel_block"
+  },
+  "result": {
+    "id": "tutorialmod:steel_block"
+  }
+}

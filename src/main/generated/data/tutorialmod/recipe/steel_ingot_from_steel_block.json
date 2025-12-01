@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "steel_ingot",
+  "ingredients": [
+    {
+      "item": "tutorialmod:steel_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "tutorialmod:steel_ingot"
+  }
+}

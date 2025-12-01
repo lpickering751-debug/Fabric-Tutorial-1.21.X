@@ -1,6 +1,8 @@
 package net.liam.tutorialmod.item.custom;
 
 import net.liam.tutorialmod.component.ModDataComponentTypes;
+import net.liam.tutorialmod.util.ModTags;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.ItemEntity;
@@ -65,8 +67,15 @@ public class MagnetItem extends Item {
             );
 
             List<Entity> entities = player.getWorld().getOtherEntities(
-                    player, box, entity -> (entity instanceof ItemEntity)
+                    player, box, entity -> {
+                        if (entity instanceof ItemEntity itemEntity) {
+                            return itemEntity.getStack().isIn(ModTags.Items.MAGNETIC_ITEMS);
+                        }
+                        return false;
+                    }
             );
+
+
             for (Entity entity : entities) {
                 double dx = player.getX() - entity.getX();
                 double dy = player.getY() - entity.getY();
@@ -140,7 +149,15 @@ public class MagnetItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.tutorialmod.magnet_item.tooltip"));
+
+        if (Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("tooltip.tutorialmod.magnet_item.tooltip.1"));
+            tooltip.add(Text.translatable("tooltip.tutorialmod.magnet_item.tooltip.2"));
+            tooltip.add(Text.translatable("tooltip.tutorialmod.magnet_item.tooltip.3"));
+        } else {
+            tooltip.add(Text.translatable("tooltip.tutorialmod.press_shift"));
+        }
+
         super.appendTooltip(stack, context, tooltip, type);
     }
 }

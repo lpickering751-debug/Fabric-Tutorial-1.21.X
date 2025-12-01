@@ -1,0 +1,6 @@
+// 1.21	2025-12-01T14:52:35.8397029	Tutorial Mod/Block Loot Tables
+06bbf5be8af36dffb1da3e1b6093df2cf78c9f24 data\tutorialmod\loot_table\blocks\raw_steel_block.json
+697b5a95276db0c95385e5c415de7c54e88832bb data\tutorialmod\loot_table\blocks\steel_ore.json
+eb6f45bf4aa61146ffffe00b1f781899907b87f8 data\tutorialmod\loot_table\blocks\elytra_launcher.json
+fc23c3ea3dbf772962113d56fbf761b1a610c708 data\tutorialmod\loot_table\blocks\steel_block.json
+697b5a95276db0c95385e5c415de7c54e88832bb data\tutorialmod\loot_table\blocks\deepslate_steel_ore.json

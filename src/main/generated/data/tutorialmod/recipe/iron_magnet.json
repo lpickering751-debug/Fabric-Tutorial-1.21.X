@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "L": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "N": {
+      "item": "tutorialmod:steel_nugget"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "S": {
+      "item": "tutorialmod:steel_ingot"
+    }
+  },
+  "pattern": [
+    "LSN",
+    " IS",
+    "RSN"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tutorialmod:iron_magnet"
+  }
+}

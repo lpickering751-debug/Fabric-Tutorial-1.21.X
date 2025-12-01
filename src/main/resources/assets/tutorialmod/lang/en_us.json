@@ -20,5 +20,12 @@
   "itemgroup.tutorialmod.steel_blocks": "Steel Blocks",
   "itemgroup.tutorialmod.misc": "Misc",
 
-  "tooltip.tutorialmod.magnet_item.tooltip": "Literally just a magnet."
+  "tooltip.tutorialmod.magnet_item.tooltip.1": "Literally just a §9magnet§r...",
+  "tooltip.tutorialmod.magnet_item.tooltip.2": "§6or is it...?§r",
+  "tooltip.tutorialmod.magnet_item.tooltip.3": "(you can craft a §2launcher§r with it)",
+
+  "tooltip.tutorialmod.ElytraLauncherBlock.tooltip.1": "§2Launches§r you §5uuuuuup§r in the air!",
+
+  "tooltip.tutorialmod.press_shift": "§6[Hold Shift to View]§r",
+  "tooltip.tutorialmod.eat_me": "§aEat Me!§r"
 }

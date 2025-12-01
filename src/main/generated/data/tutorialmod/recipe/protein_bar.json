@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:apple"
+    },
+    "C": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "E": {
+      "item": "minecraft:egg"
+    },
+    "H": {
+      "item": "minecraft:honey_bottle"
+    },
+    "P": {
+      "item": "minecraft:pumpkin_seeds"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "W": {
+      "item": "minecraft:honey_bottle"
+    }
+  },
+  "pattern": [
+    "WCS",
+    "PHA",
+    "ECH"
+  ],
+  "result": {
+    "count": 5,
+    "id": "tutorialmod:protein_bar"
+  }
+}
